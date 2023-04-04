@@ -15,8 +15,8 @@ start.addEventListener ('click', function(){
     // richiamo l'array vuoto all'inizio del click del button comincia
     numsRandom = [];
 
-    // faccio si che il tasto start non sia più cliccabile
-    start.setAttribute("disabled",true)
+    // faccio si che il tasto start non sia più visualizzato
+    start.style.display = "none"
 
     // Genero 5 numeri random da 1 a 100 e li pusho nell'array "numsRandom"
     // creo un ciclo for per ripetere l'operazione 5 volte
@@ -65,6 +65,9 @@ let result = document.getElementById("result")
 // scrivo la funzione che mi aggiunga i numeri che ho scritto in un array e li confronti con i numeri random al click del pulsante "risultato"
 result.addEventListener ('click', function(){
 
+    // faccio si che il tasto result sparisca
+    result.style.display = "none";
+
     // richiamo l'array vuoto all'inizio del click del button risultato
     risNumber = [];
 
@@ -99,6 +102,20 @@ result.addEventListener ('click', function(){
         // vado a selezionare il div #final-resultt in cui stampare
         let finalResult = document.getElementById("final-result")
         // stampo il risultato finale
-        finalResult.innerHTML = `Ti sei ricordato ${numRicordati} numeri.`
+        finalResult.innerHTML = `Ti sei ricordato ${numRicordati} numeri su 5.`
+
+        // creo la variabile per il tasto restart
+        let restart = document.getElementById("restart")
+        // faccio si che il tasto restart venga visualizzato dopo che siamo a conoscenza del risultato
+        restart.style.display = "flex"
     }
 })
+
+// do nuovamente la variabile al tasto restart (poichè fuori dalla funzione precedente)
+let restart = document.getElementById("restart")
+
+// aggiungo una funzione per l'evento al click del pulsante restart
+restart.addEventListener("click", function() {
+    // ricarica pagina
+    location.reload();
+  });
