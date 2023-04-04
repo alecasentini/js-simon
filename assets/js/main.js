@@ -64,9 +64,41 @@ let result = document.getElementById("result")
 
 // scrivo la funzione che mi aggiunga i numeri che ho scritto in un array e li confronti con i numeri random al click del pulsante "risultato"
 result.addEventListener ('click', function(){
-    
+
+    // richiamo l'array vuoto all'inizio del click del button risultato
+    risNumber = [];
+
     // creo un ciclo che ripeta l'operazione di push nell'array risNumber []
     for (let i = 0; i < 5; i++){
+        // do una variabile che prenda i valori dai div #ris-1, #ris-2, ecc
+        let numRis = parseInt (document.getElementById ('ris-' + (i + 1)).value);
+        // li pusho nell'array risNumber
+        risNumber.push(numRis)
+    }
 
+    // creo un array vuoto per memorizzare i numeri ricordati
+    let numRemember = []
+
+    // scrivo un ciclo che mi controlli gli elementi dei due array
+    for (var i = 0; i < numsRandom.length; i++) {
+        // scrivo una condizione per farmi restituire il risultato nella soluzione
+        if (risNumber.includes(numsRandom[i])) {
+            
+            // pusho i numeri ricordati nell'array per sapere quanti ne ho ricordati
+            numRemember.push(risNumber)
+            
+            // seleziono <ul> #solution nel quale scrivere i numeri 
+            let solution = document.getElementById("solution")
+            // scrivo nel html <li> "numeri che mi sono ricordato/dimenticato"
+            solution.innerHTML += `<li>Ti sei ricordato del numero ${numsRandom[i]}</li>`;
+        }   else {
+            solution.innerHTML += `<li>Ti sei dimenticato del numero ${numsRandom[i]}</li>`;
+        }
+        // creo una variabile che sia la lunghezza dell'array dei numeri ricordati
+        let numRicordati = numRemember.length;
+        // vado a selezionare il div #final-resultt in cui stampare
+        let finalResult = document.getElementById("final-result")
+        // stampo il risultato finale
+        finalResult.innerHTML = `Ti sei ricordato ${numRicordati} numeri.`
     }
 })
