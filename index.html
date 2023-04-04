@@ -17,23 +17,23 @@
         <h1 class="text-center py-3">Memory</h1>
         <div class="container d-flex flex-column border border-primary rounded align-items-center w-25">
             <h2 class="py-3">Testa la tua memoria</h2>
-            <p class="py-3 text-center">Verrano visualizzati 5 numeri a schermo per 30 secondi. <br> Scrivi quelli che ricordi:</p>
+            <p class="py-3 text-center">Verrano visualizzati 5 numeri a schermo per 5 secondi. <br> Scrivi quelli che ricordi:</p>
             <button class="btn btn-primary my-3" id="start">Comincia</button>
         </div>
 
-        <div id="game" class="container d-flex border border-primary rounded w-50 justify-content-around my-3 py-3">
-            <div id="num-random1">1</div>
-            <div id="num-random2">2</div>
-            <div id="num-random3">3</div>
-            <div id="num-random4">4</div>
-            <div id="num-random5">5</div>
+        <div id="game" class="container border border-primary rounded w-50 justify-content-around my-3 py-3" style="display: none;">
+            <div id="num-random1"></div>
+            <div id="num-random2"></div>
+            <div id="num-random3"></div>
+            <div id="num-random4"></div>
+            <div id="num-random5"></div>
         </div>
 
-        <div id="question" class="container d-flex flex-column align-items-center text-center border border-primary rounded w-50 my-3 py-3">
-            <p class="fw-semibold py-1">scrivi i 5 numeri che hai visto</p>
+        <div id="question" class="container flex-column align-items-center text-center border border-primary rounded w-50 my-3 py-3" style="display: none;">
+            <p class="fw-semibold py-1">scrivi i 5 numeri che ricordi</p>
 
             <div class="d-flex justify-content-around w-100 my-3 py-3">
-                <input type="number" class="" id="ris-1" style="width: 100px;">
+                <input type="number" id="ris-1" style="width: 100px;">
                 <input type="number" id="ris-2" style="width: 100px;">
                 <input type="number" id="ris-3" style="width: 100px;">
                 <input type="number" id="ris-4" style="width: 100px;">
